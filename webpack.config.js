@@ -3,8 +3,8 @@ module.exports = {
   mode: 'development',
   entry: './src',
   output: {
-    path: `${__dirname}/dist/`,
-    filename: 'bundle.js',
+    path: `${__dirname}/dist/`,
+    filename: 'bundle.js',
   },
   module: {
     rules: [
@@ -16,27 +16,27 @@ module.exports = {
           cacheDirectory: true,
           babelrc: false,
           presets: [
-              ["@babel/env", {
-                  "targets": {
-                      'browsers': ['Chrome >=59']
-                  },
-                  "modules":false,
-                  "loose":true
-              }]],
+            ["@babel/env", {
+              "targets": {
+                'browsers': ['Chrome >=59']
+              },
+              "modules": false,
+              "loose": true
+            }]],
         }
       },
       {
         test: /\.css$/,
         use: [
-            MiniCssExtractPlugin.loader,
-            {
-              loader: 'css-loader',
-              options: {
-                modules: true,
-                importLoaders: true,
-                localIdentName: '[name]__[local]___[hash:base64]'
-              },
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: true,
+              localIdentName: '[name]__[local]___[hash:base64]'
             },
+          },
         ],
       },
     ],
